@@ -13,9 +13,8 @@ public class Application {
 		Scanner input = new Scanner(System.in);
 		Employee employee = new Employee("Nikeeta", "Sirvi");
 		CredentialService credentials = new CredentialService();
-		boolean flag = false;
 		
-		do {
+		while(true) {
 			
 			System.out.println("please enter the department from the following");
 			System.out.println("1: Technical");
@@ -30,38 +29,35 @@ public class Application {
 					credentials.generateEmailAddress(employee, "Technical");
 					credentials.generatePassword(employee);
 					credentials.showCredentials(employee);
-					flag = false;
 					break;
 				}
 				case 2:{
 					credentials.generateEmailAddress(employee, "Admin");
 					credentials.generatePassword(employee);
 					credentials.showCredentials(employee);
-					flag = false;
 					break;
 				}
 				case 3:{
 					credentials.generateEmailAddress(employee, "Human Resource");
 					credentials.generatePassword(employee);
 					credentials.showCredentials(employee);
-					flag = false;
 					break;
 				}
 				case 4:{
 					credentials.generateEmailAddress(employee, "Legal");
 					credentials.generatePassword(employee);
 					credentials.showCredentials(employee);
-					flag = false;
 					break;
 				}
 				default:{
 					System.out.println("please enter the correct option\n");
-					flag= true;
+					continue;
 				}
 				
 			}
+			break;
 			
-		}while(flag);
+		}
 
 		input.close();
 		
